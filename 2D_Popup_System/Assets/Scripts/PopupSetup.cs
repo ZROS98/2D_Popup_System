@@ -3,7 +3,7 @@ using UnityEngine;
 namespace PopupSystem
 {
     [CreateAssetMenu( menuName = ProjectConstants.POPUP_MENU_PATH + ASSET_NAME)]
-    public class PopupSetup : MonoBehaviour
+    public class PopupSetup : ScriptableObject
     {
         [field: SerializeField]
         public string Title { get; set; }
