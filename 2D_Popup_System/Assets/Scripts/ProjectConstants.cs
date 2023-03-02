@@ -7,5 +7,7 @@ namespace PopupSystem
         
         public const string HEADER_REFERENCES = "References";
         public const string HEADER_MAX_TEXT_LENGTH = "Max text length: ";
+
+        public const string GOOGLE_DRIVE_DOWNLOAD_LINK = "https://drive.google.com/uc?export=download&id=";
     }
 }
