@@ -13,7 +13,7 @@ namespace PopupSystem
         [field: SerializeField]
         private TMP_Text CurrentMessageText { get; set; }
         [field: SerializeField]
-        private TMP_Text CurrentButtonLableText { get; set; }
+        private TMP_Text CurrentButtonLabelText { get; set; }
 
         protected virtual void Start ()
         {
@@ -24,7 +24,7 @@ namespace PopupSystem
         {
             CurrentTitleText.text = GetProperTextLength(CurrentPopupSetup.Title, CurrentPopupSetup.MaxTitleLength);
             CurrentMessageText.text = GetProperTextLength(CurrentPopupSetup.Message, CurrentPopupSetup.MaxMessageLength);
-            CurrentButtonLableText.text = GetProperTextLength(CurrentPopupSetup.ButtonLable, CurrentPopupSetup.MaxButtonLableLength);
+            CurrentButtonLabelText.text = GetProperTextLength(CurrentPopupSetup.ButtonLabel, CurrentPopupSetup.MaxButtonLabelLength);
         }
 
         private string GetProperTextLength (string targetText, int maxTextLenght)
