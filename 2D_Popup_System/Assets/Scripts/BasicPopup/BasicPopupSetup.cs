@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace PopupSystem
+namespace PopupSystem.Data
 {
     [CreateAssetMenu(menuName = ProjectConstants.POPUP_MENU_PATH + ASSET_NAME)]
     public class BasicPopupSetup : ScriptableObject

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc0c96b98967e1542849c7afd27842db, type: 3}
   m_Name: BasicPopupSetup_2
   m_EditorClassIdentifier: 
-  <Title>k__BackingField: Good bye
+  <Title>k__BackingField: Second popup
   <Message>k__BackingField: This is second popup
-  <ButtonLabel>k__BackingField: Close
+  <ButtonLabel>k__BackingField: Next
   <ButtonImageAddress>k__BackingField: 
   <BackgroundImageAddress>k__BackingField: 
