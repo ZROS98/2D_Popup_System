@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,6 +13,7 @@ namespace PopupSystem
 
         public void ShowPopup ()
         {
+            AddPopupsToQueue();
             CloseActivePopup();
             ManageCurrentActivePopup();
         }
@@ -33,21 +32,11 @@ namespace PopupSystem
             }
         }
 
-        protected virtual void OnEnable ()
-        {
-            Instantiate();
-        }
-
         private void ManageCurrentActivePopup ()
         {
             CurrentActivePopup = PopupQueue.Peek();
             PopupQueue.Dequeue();
             CurrentActivePopup.gameObject.SetActiveOptimized(true);
-        }
-
-        private void Instantiate ()
-        {
-            AddPopupsToQueue();
         }
 
         private void AddPopupsToQueue ()

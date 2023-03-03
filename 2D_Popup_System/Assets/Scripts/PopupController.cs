@@ -3,11 +3,11 @@ using UnityEngine;
 
 namespace PopupSystem
 {
-    public class PopupController : MonoBehaviour
+    public class PopupController : BasicPopupController
     {
         [field: Header(ProjectConstants.HEADER_REFERENCES)]
         [field: SerializeField]
-        private PopupSetup CurrentPopupSetup { get; set; }
+        private BasicPopupSetup CurrentBasicPopupSetup { get; set; }
         [field: SerializeField]
         private TMP_Text CurrentTitleText { get; set; }
         [field: SerializeField]
@@ -15,21 +15,17 @@ namespace PopupSystem
         [field: SerializeField]
         private TMP_Text CurrentButtonLabelText { get; set; }
 
-        protected virtual void Start ()
+        protected override void Start ()
         {
+            base.Start();
             SetReferences();
         }
 
         private void SetReferences ()
         {
-            CurrentTitleText.text = GetProperTextLength(CurrentPopupSetup.Title, CurrentPopupSetup.MaxTitleLength);
-            CurrentMessageText.text = GetProperTextLength(CurrentPopupSetup.Message, CurrentPopupSetup.MaxMessageLength);
-            CurrentButtonLabelText.text = GetProperTextLength(CurrentPopupSetup.ButtonLabel, CurrentPopupSetup.MaxButtonLabelLength);
-        }
-
-        private string GetProperTextLength (string targetText, int maxTextLenght)
-        {
-            return targetText.Length > maxTextLenght ? targetText.Substring(0, maxTextLenght) : targetText;
+            SetTextReferences(CurrentTitleText, CurrentBasicPopupSetup.Title, CurrentBasicPopupSetup.MaxTitleLength);
+            SetTextReferences(CurrentMessageText, CurrentBasicPopupSetup.Message, CurrentBasicPopupSetup.MaxMessageLength);
+            SetTextReferences(CurrentButtonLabelText, CurrentBasicPopupSetup.ButtonLabel, CurrentBasicPopupSetup.MaxButtonLabelLength);
         }
     }
 }
