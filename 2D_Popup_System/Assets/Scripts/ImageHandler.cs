@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
@@ -6,19 +7,17 @@ namespace PopupSystem
 {
     public class ImageHandler : MonoBehaviour
     {
-        [field: SerializeField]
-        private Texture2D CurrentTexture { get; set; }
-        [field: SerializeField]
-        private PopupSetup CurrentPopupSetup { get; set; }
-        
-        protected virtual void Start ()
+        public Texture2D CurrentTexture2D;
+        public List<Texture2D> CurrentTexture2DCollection { get; private set; } = new List<Texture2D>();
+
+        public void GetImage (string imageAddress)
         {
-            StartCoroutine(GetImageProcess());
+            StartCoroutine(GetImageProcess(imageAddress));
         }
 
-        private IEnumerator GetImageProcess ()
+        private IEnumerator GetImageProcess (string imageAddress)
         {
-            using (UnityWebRequest unityWebRequest = UnityWebRequestTexture.GetTexture(ProjectConstants.GOOGLE_DRIVE_DOWNLOAD_LINK + CurrentPopupSetup.ButtonImageAddress))
+            using (UnityWebRequest unityWebRequest = UnityWebRequestTexture.GetTexture(ProjectConstants.GOOGLE_DRIVE_DOWNLOAD_LINK + imageAddress))
             {
                 yield return unityWebRequest.SendWebRequest();
 
@@ -28,7 +27,8 @@ namespace PopupSystem
                 }
                 else
                 {
-                    CurrentTexture = DownloadHandlerTexture.GetContent(unityWebRequest);
+                    CurrentTexture2D = DownloadHandlerTexture.GetContent(unityWebRequest);
+                    CurrentTexture2DCollection.Add(CurrentTexture2D);
                 }
             }
         }
