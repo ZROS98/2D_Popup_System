@@ -350,9 +350,25 @@ PrefabInstance:
     m_TransformParent: {fileID: 8383840179328034279}
     m_Modifications:
     - target: {fileID: 5684480538346977074, guid: 6910499637a35f7498b4574538c571fd, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5684480538346977074, guid: 6910499637a35f7498b4574538c571fd, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 8383840179328034280}
+    - target: {fileID: 5684480538346977074, guid: 6910499637a35f7498b4574538c571fd, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: HandlePopupMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 5684480538346977074, guid: 6910499637a35f7498b4574538c571fd, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 8383840179535822711}
+    - target: {fileID: 5684480538346977074, guid: 6910499637a35f7498b4574538c571fd, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.UI.Toggle, UnityEngine.UI
+      objectReference: {fileID: 0}
     - target: {fileID: 5684480538346977075, guid: 6910499637a35f7498b4574538c571fd, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -370,9 +386,21 @@ PrefabInstance:
       value: -534.5889
       objectReference: {fileID: 0}
     - target: {fileID: 5684480538351973198, guid: 6910499637a35f7498b4574538c571fd, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5684480538351973198, guid: 6910499637a35f7498b4574538c571fd, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 8383840179328034280}
+    - target: {fileID: 5684480538351973198, guid: 6910499637a35f7498b4574538c571fd, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 8383840179541834507}
+    - target: {fileID: 5684480538351973198, guid: 6910499637a35f7498b4574538c571fd, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.UI.Toggle, UnityEngine.UI
+      objectReference: {fileID: 0}
     - target: {fileID: 5684480538351973199, guid: 6910499637a35f7498b4574538c571fd, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -406,9 +434,21 @@ PrefabInstance:
       value: -534.5889
       objectReference: {fileID: 0}
     - target: {fileID: 5684480540035293431, guid: 6910499637a35f7498b4574538c571fd, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5684480540035293431, guid: 6910499637a35f7498b4574538c571fd, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 8383840179328034280}
+    - target: {fileID: 5684480540035293431, guid: 6910499637a35f7498b4574538c571fd, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 8383840178938538162}
+    - target: {fileID: 5684480540035293431, guid: 6910499637a35f7498b4574538c571fd, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.UI.Toggle, UnityEngine.UI
+      objectReference: {fileID: 0}
     - target: {fileID: 5684480540126446620, guid: 6910499637a35f7498b4574538c571fd, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

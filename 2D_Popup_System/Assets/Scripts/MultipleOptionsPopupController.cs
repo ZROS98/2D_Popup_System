@@ -30,8 +30,9 @@ namespace PopupSystem
             PopupPanel.SetActiveOptimized(isActive);
         }
 
-        public void HandlePopupMenu ()
+        public void HandlePopupMenu (Toggle currentToggle)
         {
+            currentToggle.interactable = false;
             IsToggleOnCollection.Add(true);
 
             if (IsToggleOnCollection.Count == CurrentToggleCollection.Count)
@@ -42,6 +43,7 @@ namespace PopupSystem
                 foreach (Toggle toggle in CurrentToggleCollection)
                 {
                     toggle.isOn = false;
+                    toggle.interactable = true;
                 }
             }
         }
