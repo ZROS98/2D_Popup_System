@@ -11,6 +11,8 @@ namespace PopupSystem
         [field: SerializeField]
         private PopupSetupWithMultipleOptions CurrentPopupSetupWithMultipleOptions { get; set; }
         [field: SerializeField]
+        private GameObject PopupPanel { get; set; }
+        [field: SerializeField]
         private TMP_Text CurrentTitleText { get; set; }
         [field: SerializeField]
         private List<Texture2D> CurrentTextureCollection { get; set; }
@@ -19,6 +21,28 @@ namespace PopupSystem
         
         [field: SerializeField]
         private ImageHandler CurrentImageHandler { get; set; }
+        private List<bool> IsToggleOnCollection { get; set; } = new List<bool>();
+
+        public void ManagePopupPanel (bool isActive)
+        {
+            PopupPanel.SetActiveOptimized(isActive);
+        }
+        
+        public void HandlePopupMenu ()
+        {
+            IsToggleOnCollection.Add(true);
+            
+            if (IsToggleOnCollection.Count == CurrentToggleCollection.Count)
+            {
+                ManagePopupPanel(false);
+                IsToggleOnCollection.Clear();
+
+                foreach (Toggle toggle in CurrentToggleCollection)
+                {
+                    toggle.isOn = false;
+                }
+            }
+        }
         
         protected override void Start ()
         {
