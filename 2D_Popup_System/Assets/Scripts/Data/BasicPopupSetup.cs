@@ -3,7 +3,7 @@ using UnityEngine;
 namespace PopupSystem
 {
     [CreateAssetMenu(menuName = ProjectConstants.POPUP_MENU_PATH + ASSET_NAME)]
-    public class PopupSetup : ScriptableObject
+    public class BasicPopupSetup : ScriptableObject
     {
         [field: SerializeField, Header(ProjectConstants.HEADER_MAX_TEXT_LENGTH + "12")]
         public string Title { get; private set; }
@@ -20,6 +20,6 @@ namespace PopupSystem
         public int MaxMessageLength { get; private set; } = 75;
         public int MaxButtonLabelLength { get; private set; } = 12;
 
-        private const string ASSET_NAME = nameof(PopupSetup);
+        private const string ASSET_NAME = nameof(BasicPopupSetup);
     }
 }
