@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Title>k__BackingField: Daily Reward
   <ButtonImageAddress>k__BackingField:
-  - 1p7iZDXVftZKEK44jL5cxOPdpVA0rqBRz
-  - 1REKi6j1hhsDkvbxlrH_VGvQGt8J2zTJx
-  - 1lHgGPNu4cPK6am_YmgUoGYevfiPciIn0
+  - diamond.png
+  - dollar.png
+  - experience.png
   <BackgroundImageAddress>k__BackingField: 
