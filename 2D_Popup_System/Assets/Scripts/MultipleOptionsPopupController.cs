@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -70,6 +72,8 @@ namespace PopupSystem
         private IEnumerator SetSpritesProcess ()
         {
             yield return new WaitUntil(() => CheckIfAllSpritesAreLoaded() == true);
+            
+            CurrentImageHandler.SpriteCollection.OrderBy(x =>x.name);
             
             for (int i = 0; i < CurrentImageHandler.SpriteCollection.Count; i++)
             {

@@ -28,6 +28,7 @@ namespace PopupSystem
                 {
                     Texture2D texture = DownloadHandlerTexture.GetContent(unityWebRequest);
                     Sprite createdSprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
+                    createdSprite.name = imageAddress;
                     SpriteCollection.Add(createdSprite);
                 }
             }
