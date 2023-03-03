@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -15,7 +16,7 @@ namespace PopupSystem
         [field: SerializeField]
         private TMP_Text CurrentTitleText { get; set; }
         [field: SerializeField]
-        private List<Texture2D> CurrentTextureCollection { get; set; }
+        private List<Image> CurrentToggleImageCollection { get; set; } = new List<Image>();
         [field: SerializeField]
         private List<Toggle> CurrentToggleCollection { get; set; }
         
@@ -63,7 +64,23 @@ namespace PopupSystem
                 CurrentImageHandler.GetImage(CurrentPopupSetupWithMultipleOptions.ButtonImageAddress[i]);
             }
 
-            CurrentTextureCollection = CurrentImageHandler.CurrentTexture2DCollection;
+            StartCoroutine(SetSpritesProcess());
+        }
+
+        private IEnumerator SetSpritesProcess ()
+        {
+            yield return new WaitUntil(() => CheckIfAllSpritesAreLoaded() == true);
+            
+            for (int i = 0; i < CurrentImageHandler.SpriteCollection.Count; i++)
+            {
+                Sprite sprite = CurrentImageHandler.SpriteCollection[i];
+                CurrentToggleImageCollection[i].sprite = sprite;
+            }
+        }
+
+        private bool CheckIfAllSpritesAreLoaded ()
+        {
+            return CurrentImageHandler.SpriteCollection.Count == CurrentPopupSetupWithMultipleOptions.ButtonImageAddress.Count;
         }
     }
 }

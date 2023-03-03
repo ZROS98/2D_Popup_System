@@ -7,8 +7,7 @@ namespace PopupSystem
 {
     public class ImageHandler : MonoBehaviour
     {
-        public Texture2D CurrentTexture2D;
-        public List<Texture2D> CurrentTexture2DCollection { get; private set; } = new List<Texture2D>();
+        public List<Sprite> SpriteCollection { get; private set; } = new List<Sprite>();
 
         public void GetImage (string imageAddress)
         {
@@ -27,8 +26,9 @@ namespace PopupSystem
                 }
                 else
                 {
-                    CurrentTexture2D = DownloadHandlerTexture.GetContent(unityWebRequest);
-                    CurrentTexture2DCollection.Add(CurrentTexture2D);
+                    Texture2D texture = DownloadHandlerTexture.GetContent(unityWebRequest);
+                    Sprite createdSprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
+                    SpriteCollection.Add(createdSprite);
                 }
             }
         }
