@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +20,7 @@ namespace PopupSystem
         private List<Image> CurrentToggleImageCollection { get; set; } = new List<Image>();
         [field: SerializeField]
         private List<Toggle> CurrentToggleCollection { get; set; }
-        
+
         [field: SerializeField]
         private ImageHandler CurrentImageHandler { get; set; }
         private List<bool> IsToggleOnCollection { get; set; } = new List<bool>();
@@ -30,11 +29,11 @@ namespace PopupSystem
         {
             PopupPanel.SetActiveOptimized(isActive);
         }
-        
+
         public void HandlePopupMenu ()
         {
             IsToggleOnCollection.Add(true);
-            
+
             if (IsToggleOnCollection.Count == CurrentToggleCollection.Count)
             {
                 ManagePopupPanel(false);
@@ -46,7 +45,7 @@ namespace PopupSystem
                 }
             }
         }
-        
+
         protected override void Start ()
         {
             base.Start();
@@ -72,9 +71,9 @@ namespace PopupSystem
         private IEnumerator SetSpritesProcess ()
         {
             yield return new WaitUntil(() => CheckIfAllSpritesAreLoaded() == true);
-            
-            CurrentImageHandler.SpriteCollection.OrderBy(x =>x.name);
-            
+
+            CurrentImageHandler.SpriteCollection.OrderBy(x => x.name);
+
             for (int i = 0; i < CurrentImageHandler.SpriteCollection.Count; i++)
             {
                 Sprite sprite = CurrentImageHandler.SpriteCollection[i];
