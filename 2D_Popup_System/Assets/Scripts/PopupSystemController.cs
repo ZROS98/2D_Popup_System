@@ -6,11 +6,11 @@ namespace PopupSystem
     public class PopupSystemController : MonoBehaviour
     {
         [field: SerializeField]
-        private List<PopupController> PopupCollection { get; set; }
+        private List<BasicPopupController> PopupCollection { get; set; }
         [field: SerializeField]
         private BasicPopupQueueVariable CurrentBasicPopupQueueVariable { get; set; }
 
-        private Queue<PopupController> PopupQueue { get; set; } = new Queue<PopupController>();
+        private Queue<BasicPopupController> PopupQueue { get; set; } = new Queue<BasicPopupController>();
 
         public void ShowPopup ()
         {
@@ -20,7 +20,7 @@ namespace PopupSystem
 
         private void AddPopupsToQueue ()
         {
-            foreach (PopupController popupController in PopupCollection)
+            foreach (BasicPopupController popupController in PopupCollection)
             {
                 PopupQueue.Enqueue(popupController);
             }
@@ -30,7 +30,7 @@ namespace PopupSystem
 
         private void HandleFirstPopupInQueue ()
         {
-            PopupController currentPopup = PopupQueue.Peek();
+            BasicPopupController currentPopup = PopupQueue.Peek();
             PopupQueue.Dequeue();
             currentPopup.gameObject.SetActiveOptimized(true);
         }

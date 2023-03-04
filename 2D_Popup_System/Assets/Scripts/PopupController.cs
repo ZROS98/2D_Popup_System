@@ -57,7 +57,7 @@ namespace PopupSystem
 
         private void ShowNextPopup ()
         {
-            PopupController currentPopup = CurrentBasicPopupQueueVariable.CurrentValue.Peek();
+            BasicPopupController currentPopup = CurrentBasicPopupQueueVariable.CurrentValue.Peek();
             CurrentBasicPopupQueueVariable.CurrentValue.Dequeue();
             currentPopup.gameObject.SetActiveOptimized(true);
         }

@@ -6,12 +6,12 @@ using UnityEngine;
 [CreateAssetMenu(fileName = ASSET_NAME, menuName = ASSET_MENU_NAME)]
 public class BasicPopupQueueVariable : SharedVariable, ISerializationCallbackReceiver
 {
-    public event Action<Queue<PopupController>> OnValueChanged = delegate (Queue<PopupController> list) { };
+    public event Action<Queue<BasicPopupController>> OnValueChanged = delegate (Queue<BasicPopupController> list) { };
 
-    private Queue<PopupController> currentValue;
-    private Queue<PopupController> InitialValue { get; }
+    private Queue<BasicPopupController> currentValue;
+    private Queue<BasicPopupController> InitialValue { get; }
 
-    public Queue<PopupController> CurrentValue
+    public Queue<BasicPopupController> CurrentValue
     {
         get => currentValue;
         set
