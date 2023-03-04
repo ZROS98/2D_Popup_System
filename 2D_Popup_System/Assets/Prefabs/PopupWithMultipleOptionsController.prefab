@@ -329,7 +329,7 @@ MonoBehaviour:
   - {fileID: 8383840179541834507}
   - {fileID: 8383840178938538162}
   - {fileID: 8383840179535822711}
-  <CurrentImageHandler>k__BackingField: {fileID: 8383840179328034281}
+  <CurrentSpriteCreator>k__BackingField: {fileID: 8383840179328034281}
 --- !u!114 &8383840179328034281
 MonoBehaviour:
   m_ObjectHideFlags: 0
