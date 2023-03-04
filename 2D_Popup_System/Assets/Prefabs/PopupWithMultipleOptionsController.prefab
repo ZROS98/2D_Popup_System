@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 5495879732714414736}
   - component: {fileID: 5854898095245938200}
   m_Layer: 0
-  m_Name: Button
+  m_Name: ShowPopupWithMultipleOptionsButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

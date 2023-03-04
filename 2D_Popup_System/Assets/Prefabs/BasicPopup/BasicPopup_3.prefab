@@ -9,8 +9,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2963258597080166361, guid: 423a67b6ac8bbea45b520d2ded0e2f4b, type: 3}
       propertyPath: m_Name
-      value: BasicPopup
+      value: BasicPopup_3
       objectReference: {fileID: 0}
+    - target: {fileID: 2963258597080166365, guid: 423a67b6ac8bbea45b520d2ded0e2f4b, type: 3}
+      propertyPath: <CurrentBasicPopupSetup>k__BackingField
+      value: 
+      objectReference: {fileID: 11400000, guid: 9aa7d1a7687fd0949a6e904611266263, type: 2}
     - target: {fileID: 2963258597080166366, guid: 423a67b6ac8bbea45b520d2ded0e2f4b, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
