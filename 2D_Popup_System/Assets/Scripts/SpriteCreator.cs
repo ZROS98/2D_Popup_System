@@ -11,10 +11,10 @@ namespace PopupSystem
 
         public void GetImage (string imageAddress)
         {
-            StartCoroutine(GetImageProcess(imageAddress));
+            StartCoroutine(GetTextureProcess(imageAddress));
         }
 
-        private IEnumerator GetImageProcess (string imageAddress)
+        private IEnumerator GetTextureProcess (string imageAddress)
         {
             using (UnityWebRequest unityWebRequest = UnityWebRequestTexture.GetTexture(ProjectConstants.GOOGLE_DRIVE_DOWNLOAD_LINK + imageAddress))
             {
@@ -27,11 +27,16 @@ namespace PopupSystem
                 else
                 {
                     Texture2D texture = DownloadHandlerTexture.GetContent(unityWebRequest);
-                    Sprite createdSprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
-                    createdSprite.name = imageAddress;
-                    SpriteCollection.Add(createdSprite);
+                    CreateSprite(texture, imageAddress);
                 }
             }
+        }
+
+        private void CreateSprite (Texture2D texture, string imageAddress)
+        {
+            Sprite createdSprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
+            createdSprite.name = imageAddress;
+            SpriteCollection.Add(createdSprite);
         }
     }
 }
