@@ -5,9 +5,10 @@ using UnityEngine.Networking;
 
 namespace PopupSystem
 {
-    public class ImageHandler : MonoBehaviour
+    public class SpriteCreator : MonoBehaviour
     {
         public List<Sprite> SpriteCollection { get; private set; } = new List<Sprite>();
+        public Sprite CreatedSprite { get; set; }
 
         public void GetImage (string imageAddress)
         {
@@ -34,9 +35,9 @@ namespace PopupSystem
 
         private void CreateSprite (Texture2D texture, string imageAddress)
         {
-            Sprite createdSprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
-            createdSprite.name = imageAddress;
-            SpriteCollection.Add(createdSprite);
+            CreatedSprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
+            CreatedSprite.name = imageAddress;
+            SpriteCollection.Add(CreatedSprite);
         }
     }
 }

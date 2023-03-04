@@ -23,7 +23,7 @@ namespace PopupSystem
         private List<Toggle> CurrentToggleCollection { get; set; }
 
         [field: SerializeField]
-        private ImageHandler CurrentImageHandler { get; set; }
+        private SpriteCreator CurrentSpriteCreator { get; set; }
         private List<bool> IsToggleOnCollection { get; set; } = new List<bool>();
 
         public void ManagePopupPanel (bool isActive)
@@ -49,9 +49,9 @@ namespace PopupSystem
             }
         }
 
-        protected override void Start ()
+        protected override void Awake ()
         {
-            base.Start();
+            base.Awake();
             SetReferences();
         }
 
@@ -65,7 +65,7 @@ namespace PopupSystem
         {
             for (int i = 0; i < CurrentPopupSetupWithMultipleOptions.ButtonImageAddress.Count; i++)
             {
-                CurrentImageHandler.GetImage(CurrentPopupSetupWithMultipleOptions.ButtonImageAddress[i]);
+                CurrentSpriteCreator.GetImage(CurrentPopupSetupWithMultipleOptions.ButtonImageAddress[i]);
             }
 
             StartCoroutine(SetSpritesProcess());
@@ -75,18 +75,18 @@ namespace PopupSystem
         {
             yield return new WaitUntil(() => CheckIfAllSpritesAreLoaded() == true);
 
-            CurrentImageHandler.SpriteCollection.OrderBy(x => x.name);
+            CurrentSpriteCreator.SpriteCollection.OrderBy(x => x.name);
 
-            for (int i = 0; i < CurrentImageHandler.SpriteCollection.Count; i++)
+            for (int i = 0; i < CurrentSpriteCreator.SpriteCollection.Count; i++)
             {
-                Sprite sprite = CurrentImageHandler.SpriteCollection[i];
+                Sprite sprite = CurrentSpriteCreator.SpriteCollection[i];
                 CurrentToggleImageCollection[i].sprite = sprite;
             }
         }
 
         private bool CheckIfAllSpritesAreLoaded ()
         {
-            return CurrentImageHandler.SpriteCollection.Count == CurrentPopupSetupWithMultipleOptions.ButtonImageAddress.Count;
+            return CurrentSpriteCreator.SpriteCollection.Count == CurrentPopupSetupWithMultipleOptions.ButtonImageAddress.Count;
         }
     }
 }
