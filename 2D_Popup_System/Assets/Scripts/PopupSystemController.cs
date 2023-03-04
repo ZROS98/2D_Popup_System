@@ -7,36 +7,15 @@ namespace PopupSystem
     {
         [field: SerializeField]
         private List<PopupController> PopupCollection { get; set; }
+        [field: SerializeField]
+        private BasicPopupQueueVariable CurrentBasicPopupQueueVariable { get; set; }
 
         private Queue<PopupController> PopupQueue { get; set; } = new Queue<PopupController>();
-        private PopupController CurrentActivePopup { get; set; }
 
         public void ShowPopup ()
         {
             AddPopupsToQueue();
-            CloseActivePopup();
-            ManageCurrentActivePopup();
-        }
-
-        public void ShowNextPopup ()
-        {
-            CloseActivePopup();
-            ManageCurrentActivePopup();
-        }
-
-        public void CloseActivePopup ()
-        {
-            if (CurrentActivePopup != null)
-            {
-                CurrentActivePopup.gameObject.SetActiveOptimized(false);
-            }
-        }
-
-        private void ManageCurrentActivePopup ()
-        {
-            CurrentActivePopup = PopupQueue.Peek();
-            PopupQueue.Dequeue();
-            CurrentActivePopup.gameObject.SetActiveOptimized(true);
+            HandleFirstPopupInQueue();
         }
 
         private void AddPopupsToQueue ()
@@ -45,6 +24,15 @@ namespace PopupSystem
             {
                 PopupQueue.Enqueue(popupController);
             }
+
+            CurrentBasicPopupQueueVariable.CurrentValue = PopupQueue;
+        }
+
+        private void HandleFirstPopupInQueue ()
+        {
+            PopupController currentPopup = PopupQueue.Peek();
+            PopupQueue.Dequeue();
+            currentPopup.gameObject.SetActiveOptimized(true);
         }
     }
 }
