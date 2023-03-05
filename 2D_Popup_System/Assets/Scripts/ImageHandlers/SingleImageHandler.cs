@@ -14,6 +14,11 @@ namespace PopupSystem
         [field: SerializeField]
         private Image CurrentImage { get; set; }
 
+        public bool CheckIfSpriteLoaded ()
+        {
+            return CurrentSpriteCreator.CreatedSprite != null;
+        }
+        
         protected virtual void Awake ()
         {
             SetImageReference();
@@ -30,11 +35,6 @@ namespace PopupSystem
             yield return new WaitUntil(() => CheckIfSpriteLoaded() == true);
 
             CurrentImage.sprite = CurrentSpriteCreator.SpriteCollection[0];
-        }
-
-        private bool CheckIfSpriteLoaded ()
-        {
-            return CurrentSpriteCreator.CreatedSprite != null;
         }
     }
 }
