@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace PopupSystem
 {
-    public class PopupController : BasicPopupController
+    public class SinglePopupController : BasicPopupController
     {
         [field: SerializeField]
         private BasicPopupSetup CurrentBasicPopupSetup { get; set; }
