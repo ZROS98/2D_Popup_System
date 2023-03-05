@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e8b59de62c02964c977bc4e5bf171b3, type: 3}
+  m_Name: PopupWithLinkSetup
+  m_EditorClassIdentifier: 
+  <Title>k__BackingField: Information
+  <Message>k__BackingField: This is popup with link to repository of this project
+  <ButtonLabel>k__BackingField: Close
+  <ButtonImageAddress>k__BackingField: 
+  <BackgroundImageAddress>k__BackingField: 
+  <LinkAddress>k__BackingField: https://github.com/ZROS98/2D_Popup_System
+  <OpenLinkLabelButton>k__BackingField: Open repo
