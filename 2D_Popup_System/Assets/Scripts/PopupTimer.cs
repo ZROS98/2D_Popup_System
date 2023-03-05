@@ -6,7 +6,7 @@ namespace PopupSystem
 {
     public class PopupTimer
     {
-        public event Action OnTimerFinish = delegate { };
+        public event Action<int> OnTimerFinish = delegate { };
         public event Action<float> OnTimerTick = delegate { };
 
         private int TimeToShowPopup { get; set; }
@@ -61,7 +61,7 @@ namespace PopupSystem
                 OnTimerTick.Invoke(passedTime);
             }
 
-            OnTimerFinish.Invoke();
+            OnTimerFinish.Invoke(TimeToShowPopup);
             StopTimer();
         }
     }

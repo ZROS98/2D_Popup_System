@@ -10,7 +10,7 @@ namespace PopupSystem
         [field: SerializeField]
         private BasicPopupQueueVariable CurrentBasicPopupQueueVariable { get; set; }
 
-        private List<PopupTimer> TimerCollection { get; set; } = new List<PopupTimer>();
+        private List<PopupTimer> TimerCollection { get; set; } = new List<PopupTimer>(); // переробити таймер, щоб не запускати декілька на раз ?
 
         protected virtual void Awake ()
         {
@@ -33,16 +33,19 @@ namespace PopupSystem
             DetachEvents();
         }
 
-        private void HandleTimerFinish ()
+        private void HandleTimerFinish (int timeToShowPopup)
         {
-            foreach (ScheduledPopupController scheduledPopupController in CurrentPopupCollection)
+            for (int i = 0; i < CurrentPopupCollection.Count; i++)
             {
-                CurrentBasicPopupQueueVariable.CurrentValue.Enqueue(scheduledPopupController);
-
-                if (CurrentBasicPopupQueueVariable.CurrentValue.Peek() == scheduledPopupController)
+                if (CurrentPopupCollection[i].CurrentSchedulePopupSetup.TimeToShowPopup == timeToShowPopup)
                 {
-                    CurrentBasicPopupQueueVariable.CurrentValue.Peek().gameObject.SetActiveOptimized(true);
-                    CurrentBasicPopupQueueVariable.CurrentValue.Dequeue();
+                    CurrentBasicPopupQueueVariable.CurrentValue.Enqueue(CurrentPopupCollection[i]);
+
+                    if (CurrentBasicPopupQueueVariable.CurrentValue.Peek() == CurrentPopupCollection[i])
+                    {
+                        CurrentBasicPopupQueueVariable.CurrentValue.Peek().gameObject.SetActiveOptimized(true);
+                        CurrentBasicPopupQueueVariable.CurrentValue.Dequeue();
+                    }
                 }
             }
         }

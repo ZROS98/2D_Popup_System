@@ -9,7 +9,7 @@ public class BasicPopupQueueVariable : SharedVariable, ISerializationCallbackRec
     public event Action<Queue<BasicPopupController>> OnValueChanged = delegate (Queue<BasicPopupController> list) { };
 
     private Queue<BasicPopupController> currentValue;
-    private Queue<BasicPopupController> InitialValue { get; }
+    private Queue<BasicPopupController> InitialValue { get; set; } = new Queue<BasicPopupController>();
 
     public Queue<BasicPopupController> CurrentValue
     {
