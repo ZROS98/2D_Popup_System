@@ -10,8 +10,6 @@ namespace PopupSystem
         [field: SerializeField]
         private BasicPopupQueueVariable CurrentBasicPopupQueueVariable { get; set; }
 
-        private Queue<BasicPopupController> PopupQueue { get; set; } = new Queue<BasicPopupController>();
-
         public void ShowPopup ()
         {
             AddPopupsToQueue();
@@ -22,16 +20,13 @@ namespace PopupSystem
         {
             foreach (BasicPopupController popupController in PopupCollection)
             {
-                PopupQueue.Enqueue(popupController);
+                CurrentBasicPopupQueueVariable.CurrentValue.Enqueue(popupController);
             }
-
-            CurrentBasicPopupQueueVariable.CurrentValue = PopupQueue;
         }
 
         private void HandleFirstPopupInQueue ()
         {
-            BasicPopupController currentPopup = PopupQueue.Peek();
-            PopupQueue.Dequeue();
+            BasicPopupController currentPopup = CurrentBasicPopupQueueVariable.CurrentValue.Peek();
             currentPopup.gameObject.SetActiveOptimized(true);
         }
     }

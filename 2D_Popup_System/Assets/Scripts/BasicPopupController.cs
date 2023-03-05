@@ -8,13 +8,17 @@ namespace PopupSystem
     {
         [field: Header(ProjectConstants.HEADER_REFERENCES)]
         [field: SerializeField]
-        private BasicPopupQueueVariable CurrentBasicPopupQueueVariable { get; set; }
+        protected Button CurrentButton { get; set; }
         [field: SerializeField]
-        private Button CurrentButton { get; set; }
-        
+        private BasicPopupQueueVariable CurrentBasicPopupQueueVariable { get; set; }
+
         protected virtual void Awake ()
         {
             AddListenerToButton();
+        }
+        
+        protected virtual void OnEnable ()
+        {
         }
 
         protected void SetTextReferences (TMP_Text tmpText, string targetText, int maxTextLength)
@@ -34,7 +38,7 @@ namespace PopupSystem
 
         private void HandlePopup ()
         {
-            gameObject.SetActiveOptimized(false);
+            CurrentBasicPopupQueueVariable.CurrentValue.Dequeue().gameObject.SetActiveOptimized(false);
 
             if (IsThereNextPopupInQueue() == true)
             {
@@ -50,7 +54,6 @@ namespace PopupSystem
         private void ShowNextPopup ()
         {
             BasicPopupController currentPopup = CurrentBasicPopupQueueVariable.CurrentValue.Peek();
-            CurrentBasicPopupQueueVariable.CurrentValue.Dequeue();
             currentPopup.gameObject.SetActiveOptimized(true);
         }
     }
