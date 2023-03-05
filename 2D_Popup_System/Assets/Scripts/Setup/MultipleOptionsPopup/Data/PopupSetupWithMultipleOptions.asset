@@ -13,8 +13,11 @@ MonoBehaviour:
   m_Name: PopupSetupWithMultipleOptions
   m_EditorClassIdentifier: 
   <Title>k__BackingField: Daily Reward
+  <Message>k__BackingField: 
+  <ButtonLabel>k__BackingField: Confirm
+  <ButtonImageAddress>k__BackingField: yellowButton.png
+  <BackgroundImageAddress>k__BackingField: chest.png
   <ButtonImageAddress>k__BackingField:
   - diamond.png
   - dollar.png
   - experience.png
-  <BackgroundImageAddress>k__BackingField: 
