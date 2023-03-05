@@ -8,11 +8,11 @@ namespace PopupSystem
     public class SingleImageHandler : MonoBehaviour
     {
         [field: SerializeField]
-        private SpriteCreator CurrentSpriteCreator { get; set; }
-        [field: SerializeField]
         private ImageSetup CurrentImageSetup { get; set; }
         [field: SerializeField]
         private Image CurrentImage { get; set; }
+        
+        private SpriteCreator CurrentSpriteCreator { get; set; }
 
         public bool CheckIfSpriteLoaded ()
         {
@@ -26,6 +26,7 @@ namespace PopupSystem
 
         private void SetImageReference ()
         {
+            CurrentSpriteCreator = new SpriteCreator(this);
             CurrentSpriteCreator.GetImage(CurrentImageSetup.ImageAddress);
             StartCoroutine(SetSpriteProcess());
         }

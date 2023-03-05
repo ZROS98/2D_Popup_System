@@ -5,14 +5,21 @@ using UnityEngine.Networking;
 
 namespace PopupSystem
 {
-    public class SpriteCreator : MonoBehaviour
+    public class SpriteCreator
     {
         public List<Sprite> SpriteCollection { get; private set; } = new List<Sprite>();
         public Sprite CreatedSprite { get; set; }
+        private Coroutine SpriteCreatorProcess { get; set; }
+        private MonoBehaviour CoroutineController { get; set; }
+
+        public SpriteCreator (MonoBehaviour coroutineController)
+        {
+            CoroutineController = coroutineController;
+        }
 
         public void GetImage (string imageAddress)
         {
-            StartCoroutine(GetTextureProcess(imageAddress));
+            SpriteCreatorProcess = CoroutineController.StartCoroutine(GetTextureProcess(imageAddress));
         }
 
         private IEnumerator GetTextureProcess (string imageAddress)
