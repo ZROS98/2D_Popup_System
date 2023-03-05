@@ -10,7 +10,7 @@ namespace PopupSystem
         [field: SerializeField]
         private BasicPopupQueueVariable CurrentBasicPopupQueueVariable { get; set; }
 
-        private List<PopupTimer> TimerCollection { get; set; } = new List<PopupTimer>(); // переробити таймер, щоб не запускати декілька на раз ?
+        private List<PopupTimer> TimerCollection { get; set; } = new List<PopupTimer>();
 
         protected virtual void Awake ()
         {
