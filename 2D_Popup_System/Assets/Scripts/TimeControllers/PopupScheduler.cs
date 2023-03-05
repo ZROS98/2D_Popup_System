@@ -11,8 +11,8 @@ namespace PopupSystem
         private BasicPopupQueueVariable CurrentBasicPopupQueueVariable { get; set; }
 
         private List<PopupTimer> TimerCollection { get; set; } = new List<PopupTimer>();
-
-        protected virtual void Awake ()
+        
+        public void SchedulePopups()
         {
             for (int i = 0; i < CurrentPopupCollection.Count; i++)
             {
@@ -21,10 +21,7 @@ namespace PopupSystem
                 timer.StartTimer();
                 TimerCollection.Add(timer);
             }
-        }
-
-        protected virtual void OnEnable ()
-        {
+            
             AttachEvents();
         }
 
