@@ -8,7 +8,7 @@ namespace PopupSystem
         [field: SerializeField]
         private SingleImageHandler CurrentImageHandler { get; set; }
 
-        protected virtual void Awake ()
+        protected virtual void Start ()
         {
             StartCoroutine(WaitForSpritesProcess());
         }

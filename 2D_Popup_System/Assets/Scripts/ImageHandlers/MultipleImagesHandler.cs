@@ -15,7 +15,6 @@ namespace PopupSystem
         private List<Image> CurrentImageCollection { get; set; } = new List<Image>();
         
         private SpriteCreator CurrentSpriteCreator { get; set; }
-        
 
         protected virtual void Awake ()
         {
