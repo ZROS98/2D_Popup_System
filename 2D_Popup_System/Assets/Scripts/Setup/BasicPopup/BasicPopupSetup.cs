@@ -3,10 +3,10 @@ using UnityEngine;
 namespace PopupSystem.Data
 {
     [CreateAssetMenu(menuName = ProjectConstants.POPUP_MENU_PATH + ASSET_NAME)]
-    public class BasicPopupSetup : ScriptableObject
+    public class BasicPopupSetup : ScriptableObject, ITitle
     {
         [field: SerializeField, Header(ProjectConstants.HEADER_MAX_TEXT_LENGTH + "12")]
-        public string Title { get; private set; }
+        public string Title { get; set; }
         [field: SerializeField, Header(ProjectConstants.HEADER_MAX_TEXT_LENGTH + "75")]
         public string Message { get; private set; }
         [field: SerializeField, Header(ProjectConstants.HEADER_MAX_TEXT_LENGTH + "12")]
