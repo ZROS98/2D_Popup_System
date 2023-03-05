@@ -22,7 +22,7 @@ namespace PopupSystem
                 TimerCollection.Add(timer);
             }
         }
-        
+
         protected virtual void OnEnable ()
         {
             AttachEvents();
@@ -44,19 +44,17 @@ namespace PopupSystem
                     if (CurrentBasicPopupQueueVariable.CurrentValue.Peek() == CurrentPopupCollection[i])
                     {
                         CurrentBasicPopupQueueVariable.CurrentValue.Peek().gameObject.SetActiveOptimized(true);
-                        CurrentBasicPopupQueueVariable.CurrentValue.Dequeue();
                     }
                 }
             }
         }
-        
+
         private void AttachEvents ()
         {
             foreach (PopupTimer popupTimer in TimerCollection)
             {
                 popupTimer.OnTimerFinish += HandleTimerFinish;
             }
-            
         }
 
         private void DetachEvents ()
