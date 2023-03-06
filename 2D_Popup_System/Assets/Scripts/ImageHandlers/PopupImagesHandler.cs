@@ -1,46 +1,45 @@
-using System;
 using System.Collections;
 using PopupSystem.Data;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace PopupSystem
+namespace PopupSystem.ImageHandling
 {
     public class PopupImagesHandler
     {
-        private BasicPopupSetup CurrentPopupSetup { get; set; }
-        private Image CurrentPopupBackgroundImage { get; set; }
-        private Image CurrentPopupButtonImage { get; set; }
+        private BasicPopupSetup PopupSetup { get; set; }
+        private Image PopupBackgroundImage { get; set; }
+        private Image PopupButtonImage { get; set; }
 
         private Coroutine SetReferencesProcess { get; set; }
-        private PopupSystemController CurrentPopupSystemController { get; set; }
+        private MonoBehaviour CoroutineController { get; set; }
 
-        public PopupImagesHandler (PopupSystemController currentPopupSystemController, BasicPopupController basicPopupController)
+        public PopupImagesHandler (MonoBehaviour monoBehaviour, BasicPopupController basicPopupController)
         {
-            CurrentPopupSystemController = currentPopupSystemController;
-            CurrentPopupSetup = basicPopupController.CurrentBasicPopupSetup;
-            CurrentPopupBackgroundImage = basicPopupController.BackgroundImage;
-            CurrentPopupButtonImage = basicPopupController.ButtonImage;
+            CoroutineController = monoBehaviour;
+            PopupSetup = basicPopupController.CurrentBasicPopupSetup;
+            PopupBackgroundImage = basicPopupController.BackgroundImage;
+            PopupButtonImage = basicPopupController.ButtonImage;
         }
 
         public void SetReferences ()
         {
-            if (CurrentPopupSetup.BackgroundImageAddress != String.Empty)
+            if (string.IsNullOrEmpty(PopupSetup.BackgroundImageAddress) == false)
             {
-                SetImageReference(CurrentPopupSetup.BackgroundImageAddress, CurrentPopupBackgroundImage);
+                SetImageReference(PopupSetup.BackgroundImageAddress, PopupBackgroundImage);
             }
 
-            if (CurrentPopupSetup.ButtonImageAddress != String.Empty)
+            if (string.IsNullOrEmpty(PopupSetup.ButtonImageAddress) == false)
             {
-                SetImageReference(CurrentPopupSetup.ButtonImageAddress, CurrentPopupButtonImage);
+                SetImageReference(PopupSetup.ButtonImageAddress, PopupButtonImage);
             }
         }
 
         private void SetImageReference (string imageAddress, Image popupImage)
         {
-            SpriteCreator spriteCreator = new SpriteCreator(CurrentPopupSystemController);
+            SpriteCreator spriteCreator = new SpriteCreator(CoroutineController);
             spriteCreator.GetImage(imageAddress);
-            SetReferencesProcess = CurrentPopupSystemController.StartCoroutine(SetSpriteProcess(spriteCreator, popupImage));
+            SetReferencesProcess = CoroutineController.StartCoroutine(SetSpriteProcess(spriteCreator, popupImage));
         }
 
         private IEnumerator SetSpriteProcess (SpriteCreator spriteCreator, Image popupImage)

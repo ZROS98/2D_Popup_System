@@ -4,9 +4,9 @@ using PopupSystem.Data;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace PopupSystem
+namespace PopupSystem.ImageHandling
 {
-    public class MultipleImagesHandler : MonoBehaviour
+    public class MultipleImagesHandler : BaseImageHandler
     {
         [field: SerializeField]
         private PopupSetupWithMultipleOptions CurrentPopupSetupWithMultipleOptions { get; set; }
@@ -17,15 +17,14 @@ namespace PopupSystem
 
         protected virtual void Awake ()
         {
-            SetImageReferences();
+            SetAllImageReferences();
         }
 
-        private void SetImageReferences ()
+        private void SetAllImageReferences ()
         {
             for (int i = 0; i < CurrentPopupSetupWithMultipleOptions.ButtonImageAddress.Count; i++)
             {
-                SpriteCreator spriteCreator = new SpriteCreator(this);
-                spriteCreator.GetImage(CurrentPopupSetupWithMultipleOptions.ButtonImageAddress[i]);
+                SetImageReference(CurrentPopupSetupWithMultipleOptions.ButtonImageAddress[i], out SpriteCreator spriteCreator);
                 SpriteCreatorCollection.Add(spriteCreator);
             }
 
@@ -41,11 +40,6 @@ namespace PopupSystem
                 Sprite sprite = SpriteCreatorCollection[i].CreatedSprite;
                 CurrentImageCollection[i].sprite = sprite;
             }
-        }
-
-        private bool CheckIfSpriteLoaded (SpriteCreator spriteCreator)
-        {
-            return spriteCreator.CreatedSprite != null;
         }
     }
 }

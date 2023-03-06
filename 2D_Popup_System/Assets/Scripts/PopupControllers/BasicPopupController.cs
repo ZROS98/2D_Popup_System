@@ -18,15 +18,10 @@ namespace PopupSystem
         protected Button CurrentButton { get; set; }
         [field: SerializeField]
         private BasicPopupQueueVariable CurrentBasicPopupQueueVariable { get; set; }
-        
 
         protected virtual void Awake ()
         {
             AddListenerToButton();
-        }
-        
-        protected virtual void OnEnable ()
-        {
         }
 
         protected void SetTextReferences (TMP_Text tmpText, string targetText, int maxTextLength)

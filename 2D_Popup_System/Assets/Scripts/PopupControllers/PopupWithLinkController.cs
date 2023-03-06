@@ -10,11 +10,11 @@ namespace PopupSystem
         [field: SerializeField]
         private PopupWithLinkSetup CurrentPopupWithLinkSetup { get; set; }
         [field: SerializeField]
-        private TMP_Text CurrentTitleText { get; set; }
+        private TMP_Text TitleText { get; set; }
         [field: SerializeField]
-        private TMP_Text CurrentMessageText { get; set; }
+        private TMP_Text MessageText { get; set; }
         [field: SerializeField]
-        private TMP_Text CurrentButtonLabelText { get; set; }
+        private TMP_Text ButtonLabelText { get; set; }
         [field: SerializeField]
         private TMP_Text OpenLinkButtonLabelText { get; set; }
         [field: SerializeField]
@@ -29,9 +29,9 @@ namespace PopupSystem
 
         private void SetReferences ()
         {
-            SetTextReferences(CurrentTitleText, CurrentPopupWithLinkSetup.Title, CurrentPopupWithLinkSetup.MaxTitleLength);
-            SetTextReferences(CurrentMessageText, CurrentPopupWithLinkSetup.Message, CurrentPopupWithLinkSetup.MaxMessageLength);
-            SetTextReferences(CurrentButtonLabelText, CurrentPopupWithLinkSetup.ButtonLabel, CurrentPopupWithLinkSetup.MaxButtonLabelLength);
+            SetTextReferences(TitleText, CurrentPopupWithLinkSetup.Title, CurrentPopupWithLinkSetup.MaxTitleLength);
+            SetTextReferences(MessageText, CurrentPopupWithLinkSetup.Message, CurrentPopupWithLinkSetup.MaxMessageLength);
+            SetTextReferences(ButtonLabelText, CurrentPopupWithLinkSetup.ButtonLabel, CurrentPopupWithLinkSetup.MaxButtonLabelLength);
             SetTextReferences(OpenLinkButtonLabelText, CurrentPopupWithLinkSetup.OpenLinkLabelButton, CurrentPopupWithLinkSetup.MaxButtonLabelLength);
         }
         

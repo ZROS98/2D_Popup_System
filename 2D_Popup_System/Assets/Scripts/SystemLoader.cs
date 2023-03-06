@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace PopupSystem
+namespace PopupSystem.ImageHandling
 {
     public class SystemLoader : MonoBehaviour
     {

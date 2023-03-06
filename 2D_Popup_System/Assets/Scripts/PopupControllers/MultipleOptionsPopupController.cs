@@ -11,9 +11,9 @@ namespace PopupSystem
         [field: SerializeField]
         private PopupSetupWithMultipleOptions CurrentPopupSetupWithMultipleOptions { get; set; }
         [field: SerializeField]
-        private TMP_Text CurrentTitleText { get; set; }
+        private TMP_Text TitleText { get; set; }
         [field: SerializeField]
-        private List<Toggle> CurrentToggleCollection { get; set; }
+        private List<Toggle> ToggleCollection { get; set; }
         private List<bool> IsToggleOnCollection { get; set; } = new List<bool>();
         private bool IsPopupReadyToClose { get; set; }
         
@@ -22,7 +22,7 @@ namespace PopupSystem
             currentToggle.interactable = false;
             IsToggleOnCollection.Add(true);
 
-            if (IsToggleOnCollection.Count == CurrentToggleCollection.Count)
+            if (IsToggleOnCollection.Count == ToggleCollection.Count)
             {
                 IsPopupReadyToClose = true;
                 CurrentButton.interactable = true;
@@ -39,7 +39,7 @@ namespace PopupSystem
 
         private void SetReferences ()
         {
-            SetTextReferences(CurrentTitleText, CurrentPopupSetupWithMultipleOptions.Title, CurrentPopupSetupWithMultipleOptions.MaxTitleLength);
+            SetTextReferences(TitleText, CurrentPopupSetupWithMultipleOptions.Title, CurrentPopupSetupWithMultipleOptions.MaxTitleLength);
         }
         
         private void AddListenerToButton ()
@@ -51,7 +51,7 @@ namespace PopupSystem
         {
             if (IsPopupReadyToClose)
             {
-                foreach (Toggle toggle in CurrentToggleCollection)
+                foreach (Toggle toggle in ToggleCollection)
                 {
                     toggle.isOn = false;
                     toggle.interactable = true;

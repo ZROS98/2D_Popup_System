@@ -3,37 +3,36 @@ using PopupSystem.Data;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace PopupSystem
+namespace PopupSystem.ImageHandling
 {
-    public class SingleImageHandler : MonoBehaviour
+    public class SingleImageHandler : BaseImageHandler
     {
+        private SpriteCreator CurrentSpriteCreator;
         [field: SerializeField]
         private ImageSetup CurrentImageSetup { get; set; }
         [field: SerializeField]
         private Image CurrentImage { get; set; }
 
-        private SpriteCreator CurrentSpriteCreator { get; set; }
-
         public bool CheckIfSpriteLoaded ()
         {
             return CurrentSpriteCreator.CreatedSprite != null;
         }
-
+        
         protected virtual void Awake ()
         {
-            SetImageReference();
+            SetImageReference(CurrentImageSetup.ImageAddress, out _);
         }
 
-        private void SetImageReference ()
+        protected override void SetImageReference (string imageAddress, out SpriteCreator spriteCreator)
         {
-            CurrentSpriteCreator = new SpriteCreator(this);
-            CurrentSpriteCreator.GetImage(CurrentImageSetup.ImageAddress);
+            base.SetImageReference(imageAddress, out spriteCreator);
+            CurrentSpriteCreator = spriteCreator;
             StartCoroutine(SetSpriteProcess());
         }
 
         private IEnumerator SetSpriteProcess ()
         {
-            yield return new WaitUntil(CheckIfSpriteLoaded);
+            yield return new WaitUntil(() => CheckIfSpriteLoaded(CurrentSpriteCreator));
 
             CurrentImage.sprite = CurrentSpriteCreator.CreatedSprite;
         }

@@ -1,5 +1,5 @@
-using System;
 using System.Collections.Generic;
+using PopupSystem.ImageHandling;
 using UnityEngine;
 
 namespace PopupSystem
