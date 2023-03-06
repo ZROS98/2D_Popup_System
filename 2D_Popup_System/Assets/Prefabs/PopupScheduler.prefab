@@ -60,11 +60,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec8910b95e2b16e48a59e53931ea86f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <CurrentBasicPopupQueueVariable>k__BackingField: {fileID: 11400000, guid: c409d1a8f0528f44fa06213a9c6b587c, type: 2}
+  <PopupCollection>k__BackingField:
+  - {fileID: 1567077265708025992}
+  - {fileID: 1567077265281300368}
+  - {fileID: 1567077264079382472}
   <CurrentPopupCollection>k__BackingField:
   - {fileID: 1567077265708025992}
   - {fileID: 1567077265281300368}
   - {fileID: 1567077264079382472}
-  <CurrentBasicPopupQueueVariable>k__BackingField: {fileID: 11400000, guid: c409d1a8f0528f44fa06213a9c6b587c, type: 2}
 --- !u!1001 &1821722235312755278
 PrefabInstance:
   m_ObjectHideFlags: 0
