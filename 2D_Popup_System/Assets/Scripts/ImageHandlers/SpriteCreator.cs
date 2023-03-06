@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,7 +8,7 @@ namespace PopupSystem
 {
     public class SpriteCreator
     {
-        public List<Sprite> SpriteCollection { get; private set; } = new List<Sprite>();
+        public List<Sprite> SpriteCollection { get; private set; } = new List<Sprite>(); // remove
         public Sprite CreatedSprite { get; set; }
         private Coroutine SpriteCreatorProcess { get; set; }
         private MonoBehaviour CoroutineController { get; set; }

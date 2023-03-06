@@ -8,30 +8,23 @@ namespace PopupSystem
 {
     public class PopupImagesHandler
     {
-        //[field: SerializeField]
         private BasicPopupSetup CurrentPopupSetup { get; set; }
-        //[field: SerializeField]
         private Image CurrentPopupBackgroundImage { get; set; }
-        //[field: SerializeField]
         private Image CurrentPopupButtonImage { get; set; }
 
         private Coroutine SetReferencesProcess { get; set; }
-        private MonoBehaviour CoroutineController { get; set; }
+        private PopupSystemController CurrentPopupSystemController { get; set; }
 
-        private SpriteCreator CurrentSpriteCreator { get; set; }
-
-        public PopupImagesHandler (MonoBehaviour coroutineController, BasicPopupSetup popupSetup, Image popupBackgroundImage, Image popupButtonImage)
+        public PopupImagesHandler (PopupSystemController currentPopupSystemController, BasicPopupController basicPopupController)
         {
-            CoroutineController = coroutineController;
-            CurrentPopupSetup = popupSetup;
-            CurrentPopupBackgroundImage = popupBackgroundImage;
-            CurrentPopupButtonImage = popupButtonImage;
+            CurrentPopupSystemController = currentPopupSystemController;
+            CurrentPopupSetup = basicPopupController.CurrentBasicPopupSetup;
+            CurrentPopupBackgroundImage = basicPopupController.BackgroundImage;
+            CurrentPopupButtonImage = basicPopupController.ButtonImage;
         }
 
         public void SetReferences ()
         {
-            CurrentSpriteCreator = new SpriteCreator(CoroutineController);
-
             if (CurrentPopupSetup.BackgroundImageAddress != String.Empty)
             {
                 SetImageReference(CurrentPopupSetup.BackgroundImageAddress, CurrentPopupBackgroundImage);
@@ -45,26 +38,21 @@ namespace PopupSystem
 
         private void SetImageReference (string imageAddress, Image popupImage)
         {
-            CurrentSpriteCreator.GetImage(imageAddress);
-            SetReferencesProcess = CoroutineController.StartCoroutine(SetSpriteProcess(imageAddress, popupImage));
+            SpriteCreator spriteCreator = new SpriteCreator(CurrentPopupSystemController);
+            spriteCreator.GetImage(imageAddress);
+            SetReferencesProcess = CurrentPopupSystemController.StartCoroutine(SetSpriteProcess(spriteCreator, popupImage));
         }
 
-        private IEnumerator SetSpriteProcess (string imageAddress, Image popupImage)
+        private IEnumerator SetSpriteProcess (SpriteCreator spriteCreator, Image popupImage)
         {
-            yield return new WaitUntil(() => CheckIfSpriteLoaded() == true);
+            yield return new WaitUntil(() => CheckIfSpriteLoaded(spriteCreator) == true);
 
-            for (int i = 0; i < CurrentSpriteCreator.SpriteCollection.Count; i++)
-            {
-                if (CurrentSpriteCreator.SpriteCollection[i].name == imageAddress)
-                {
-                    popupImage.sprite = CurrentSpriteCreator.SpriteCollection[i];
-                }
-            }
+            popupImage.sprite = spriteCreator.CreatedSprite;
         }
 
-        private bool CheckIfSpriteLoaded ()
+        private bool CheckIfSpriteLoaded (SpriteCreator spriteCreator)
         {
-            return CurrentSpriteCreator.CreatedSprite != null;
+            return spriteCreator.CreatedSprite != null;
         }
     }
 }

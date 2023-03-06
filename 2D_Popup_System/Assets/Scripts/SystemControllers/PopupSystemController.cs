@@ -15,10 +15,7 @@ namespace PopupSystem
         {
             foreach (BasicPopupController basicPopupController in PopupCollection)
             {
-                PopupImagesHandler popupImagesHandler = new PopupImagesHandler(this, 
-                    basicPopupController.CurrentBasicPopupSetup, 
-                    basicPopupController.BackgroundImage,
-                    basicPopupController.ButtonImage);
+                PopupImagesHandler popupImagesHandler = new PopupImagesHandler(this, basicPopupController);
                 popupImagesHandler.SetReferences();
             }
         }
