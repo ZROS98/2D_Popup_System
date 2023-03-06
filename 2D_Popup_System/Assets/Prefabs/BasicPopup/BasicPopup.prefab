@@ -702,9 +702,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bf57ca2408935b4f9ffaf54b807a8ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <CurrentBasicPopupSetup>k__BackingField: {fileID: 0}
+  <BackgroundImage>k__BackingField: {fileID: 2963258596063531979}
+  <ButtonImage>k__BackingField: {fileID: 2963258595720108601}
   <CurrentButton>k__BackingField: {fileID: 2963258595720108600}
   <CurrentBasicPopupQueueVariable>k__BackingField: {fileID: 11400000, guid: c409d1a8f0528f44fa06213a9c6b587c, type: 2}
-  <CurrentBasicPopupSetup>k__BackingField: {fileID: 0}
   <CurrentTitleText>k__BackingField: {fileID: 2963258596567777145}
   <CurrentMessageText>k__BackingField: {fileID: 2963258595748254265}
   <CurrentButtonLabelText>k__BackingField: {fileID: 2963258595405040991}

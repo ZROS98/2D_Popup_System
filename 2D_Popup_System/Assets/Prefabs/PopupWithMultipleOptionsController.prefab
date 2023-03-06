@@ -885,6 +885,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6b4bb4e00c3efa488325b89130b9709, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <CurrentBasicPopupSetup>k__BackingField: {fileID: 11400000, guid: cc6ce8e7c80d9ac42a2ca7ba168e2fd8, type: 2}
+  <BackgroundImage>k__BackingField: {fileID: 7534483932559512489}
+  <ButtonImage>k__BackingField: {fileID: 1168049473091201896}
   <CurrentButton>k__BackingField: {fileID: 7553106565895149641}
   <CurrentBasicPopupQueueVariable>k__BackingField: {fileID: 11400000, guid: c409d1a8f0528f44fa06213a9c6b587c, type: 2}
   <CurrentPopupSetupWithMultipleOptions>k__BackingField: {fileID: 11400000, guid: cc6ce8e7c80d9ac42a2ca7ba168e2fd8, type: 2}

@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.16037738, g: 0.16037738, b: 0.16037738, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -196,7 +196,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4293388263
-  m_fontColor: {r: 0.9056604, g: 0.9056604, b: 0.9056604, a: 1}
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -315,7 +315,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.16037738, g: 0.16037738, b: 0.16037738, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -812,6 +812,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd8d352c1d51e5441869fe6ad4044bfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <CurrentBasicPopupSetup>k__BackingField: {fileID: 11400000, guid: 794b59d91752b914b92880f3076a1302, type: 2}
+  <BackgroundImage>k__BackingField: {fileID: 2963258596063531979}
+  <ButtonImage>k__BackingField: {fileID: 7396932158029375401}
   <CurrentButton>k__BackingField: {fileID: 870662874289804287}
   <CurrentBasicPopupQueueVariable>k__BackingField: {fileID: 11400000, guid: c409d1a8f0528f44fa06213a9c6b587c, type: 2}
   <CurrentPopupWithLinkSetup>k__BackingField: {fileID: 11400000, guid: 794b59d91752b914b92880f3076a1302, type: 2}
@@ -895,7 +898,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4293388263
-  m_fontColor: {r: 0.9056604, g: 0.9056604, b: 0.9056604, a: 1}
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

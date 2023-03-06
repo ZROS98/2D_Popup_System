@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,6 +10,18 @@ namespace PopupSystem
         private List<BasicPopupController> PopupCollection { get; set; }
         [field: SerializeField]
         private BasicPopupQueueVariable CurrentBasicPopupQueueVariable { get; set; }
+
+        protected virtual void Awake ()
+        {
+            foreach (BasicPopupController basicPopupController in PopupCollection)
+            {
+                PopupImagesHandler popupImagesHandler = new PopupImagesHandler(this, 
+                    basicPopupController.CurrentBasicPopupSetup, 
+                    basicPopupController.BackgroundImage,
+                    basicPopupController.ButtonImage);
+                popupImagesHandler.SetReferences();
+            }
+        }
 
         public void ShowPopup ()
         {

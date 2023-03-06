@@ -6,8 +6,7 @@ namespace PopupSystem
 {
     public class SinglePopupController : BasicPopupController
     {
-        [field: SerializeField]
-        private BasicPopupSetup CurrentBasicPopupSetup { get; set; }
+        
         [field: SerializeField]
         private TMP_Text CurrentTitleText { get; set; }
         [field: SerializeField]

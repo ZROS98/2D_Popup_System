@@ -1,3 +1,4 @@
+using PopupSystem.Data;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,9 +9,16 @@ namespace PopupSystem
     {
         [field: Header(ProjectConstants.HEADER_REFERENCES)]
         [field: SerializeField]
+        public BasicPopupSetup CurrentBasicPopupSetup { get; set; }
+        [field: SerializeField]
+        public Image BackgroundImage { get; set; }
+        [field: SerializeField]
+        public Image ButtonImage { get; set; }
+        [field: SerializeField]
         protected Button CurrentButton { get; set; }
         [field: SerializeField]
         private BasicPopupQueueVariable CurrentBasicPopupQueueVariable { get; set; }
+        
 
         protected virtual void Awake ()
         {
