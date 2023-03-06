@@ -49,7 +49,7 @@ namespace PopupSystem
 
         private void ClosePopup ()
         {
-            if (IsPopupReadyToClose == true)
+            if (IsPopupReadyToClose)
             {
                 foreach (Toggle toggle in CurrentToggleCollection)
                 {

@@ -48,7 +48,7 @@ namespace PopupSystem
         {
             CurrentBasicPopupQueueVariable.CurrentValue.Dequeue().gameObject.SetActiveOptimized(false);
 
-            if (IsThereNextPopupInQueue() == true)
+            if (IsThereNextPopupInQueue())
             {
                 ShowNextPopup();
             }

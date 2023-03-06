@@ -15,7 +15,7 @@ namespace PopupSystem
 
         private IEnumerator WaitForSpritesProcess ()
         {
-            yield return new WaitUntil(() => CurrentImageHandler.CheckIfSpriteLoaded() == true);
+            yield return new WaitUntil(() => CurrentImageHandler.CheckIfSpriteLoaded());
             
             gameObject.SetActiveOptimized(false);
         }

@@ -3,12 +3,10 @@ using UnityEngine;
 
 namespace PopupSystem
 {
-    public class PopupScheduler : MonoBehaviour
+    public class PopupScheduler : PopupSystemController
     {
         [field: SerializeField]
         private List<ScheduledPopupController> CurrentPopupCollection { get; set; }
-        [field: SerializeField]
-        private BasicPopupQueueVariable CurrentBasicPopupQueueVariable { get; set; }
 
         private List<PopupTimer> TimerCollection { get; set; } = new List<PopupTimer>();
         

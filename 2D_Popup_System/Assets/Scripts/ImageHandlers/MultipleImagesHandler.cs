@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using PopupSystem.Data;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,8 +12,8 @@ namespace PopupSystem
         private PopupSetupWithMultipleOptions CurrentPopupSetupWithMultipleOptions { get; set; }
         [field: SerializeField]
         private List<Image> CurrentImageCollection { get; set; } = new List<Image>();
-        
-        private SpriteCreator CurrentSpriteCreator { get; set; }
+
+        private List<SpriteCreator> SpriteCreatorCollection { get; set; } = new List<SpriteCreator>();
 
         protected virtual void Awake ()
         {
@@ -23,11 +22,11 @@ namespace PopupSystem
 
         private void SetImageReferences ()
         {
-            CurrentSpriteCreator = new SpriteCreator(this);
-            
             for (int i = 0; i < CurrentPopupSetupWithMultipleOptions.ButtonImageAddress.Count; i++)
             {
-                CurrentSpriteCreator.GetImage(CurrentPopupSetupWithMultipleOptions.ButtonImageAddress[i]);
+                SpriteCreator spriteCreator = new SpriteCreator(this);
+                spriteCreator.GetImage(CurrentPopupSetupWithMultipleOptions.ButtonImageAddress[i]);
+                SpriteCreatorCollection.Add(spriteCreator);
             }
 
             StartCoroutine(SetSpritesProcess());
@@ -35,20 +34,18 @@ namespace PopupSystem
 
         private IEnumerator SetSpritesProcess ()
         {
-            yield return new WaitUntil(() => CheckIfAllSpritesAreLoaded() == true);
-
-            CurrentSpriteCreator.SpriteCollection.OrderBy(x => x.name);
-            
-            for (int i = 0; i < CurrentSpriteCreator.SpriteCollection.Count; i++)
+            for (int i = 0; i < SpriteCreatorCollection.Count; i++)
             {
-                Sprite sprite = CurrentSpriteCreator.SpriteCollection[i];
+                yield return new WaitUntil(() => CheckIfSpriteLoaded(SpriteCreatorCollection[i]));
+                
+                Sprite sprite = SpriteCreatorCollection[i].CreatedSprite;
                 CurrentImageCollection[i].sprite = sprite;
             }
         }
 
-        private bool CheckIfAllSpritesAreLoaded ()
+        private bool CheckIfSpriteLoaded (SpriteCreator spriteCreator)
         {
-            return CurrentSpriteCreator.SpriteCollection.Count == CurrentPopupSetupWithMultipleOptions.ButtonImageAddress.Count;
+            return spriteCreator.CreatedSprite != null;
         }
     }
 }

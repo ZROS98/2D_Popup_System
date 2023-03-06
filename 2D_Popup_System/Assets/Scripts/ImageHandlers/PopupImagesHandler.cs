@@ -45,7 +45,7 @@ namespace PopupSystem
 
         private IEnumerator SetSpriteProcess (SpriteCreator spriteCreator, Image popupImage)
         {
-            yield return new WaitUntil(() => CheckIfSpriteLoaded(spriteCreator) == true);
+            yield return new WaitUntil(() => CheckIfSpriteLoaded(spriteCreator));
 
             popupImage.sprite = spriteCreator.CreatedSprite;
         }

@@ -7,9 +7,9 @@ namespace PopupSystem
     public class PopupSystemController : MonoBehaviour
     {
         [field: SerializeField]
-        private List<BasicPopupController> PopupCollection { get; set; }
+        protected BasicPopupQueueVariable CurrentBasicPopupQueueVariable { get; set; }
         [field: SerializeField]
-        private BasicPopupQueueVariable CurrentBasicPopupQueueVariable { get; set; }
+        private List<BasicPopupController> PopupCollection { get; set; }
 
         protected virtual void Awake ()
         {
