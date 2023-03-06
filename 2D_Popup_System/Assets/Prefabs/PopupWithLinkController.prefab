@@ -818,9 +818,9 @@ MonoBehaviour:
   <CurrentButton>k__BackingField: {fileID: 870662874289804287}
   <CurrentBasicPopupQueueVariable>k__BackingField: {fileID: 11400000, guid: c409d1a8f0528f44fa06213a9c6b587c, type: 2}
   <CurrentPopupWithLinkSetup>k__BackingField: {fileID: 11400000, guid: 794b59d91752b914b92880f3076a1302, type: 2}
-  <CurrentTitleText>k__BackingField: {fileID: 2963258596567777145}
-  <CurrentMessageText>k__BackingField: {fileID: 2963258595748254265}
-  <CurrentButtonLabelText>k__BackingField: {fileID: 2963258595405040991}
+  <TitleText>k__BackingField: {fileID: 2963258596567777145}
+  <MessageText>k__BackingField: {fileID: 2963258595748254265}
+  <ButtonLabelText>k__BackingField: {fileID: 2963258595405040991}
   <OpenLinkButtonLabelText>k__BackingField: {fileID: 2963258595405040991}
   <OpenLinkButton>k__BackingField: {fileID: 2963258595720108600}
 --- !u!1 &3649669656798064293
