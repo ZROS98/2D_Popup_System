@@ -15,6 +15,6 @@ MonoBehaviour:
   <Title>k__BackingField: Second
   <Message>k__BackingField: Schedule
   <ButtonLabel>k__BackingField: Next
-  <ButtonImageAddress>k__BackingField: 
-  <BackgroundImageAddress>k__BackingField: 
+  <ButtonImageAddress>k__BackingField: yellowButton.png
+  <BackgroundImageAddress>k__BackingField: yellowBackground.png
   <TimeToShowPopup>k__BackingField: 30

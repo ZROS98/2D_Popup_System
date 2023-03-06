@@ -15,5 +15,5 @@ MonoBehaviour:
   <Title>k__BackingField: Good bye
   <Message>k__BackingField: This is third popup
   <ButtonLabel>k__BackingField: Close
-  <ButtonImageAddress>k__BackingField: 
-  <BackgroundImageAddress>k__BackingField: 
+  <ButtonImageAddress>k__BackingField: yellowButton.png
+  <BackgroundImageAddress>k__BackingField: yellowBackground.png
