@@ -49,9 +49,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94dfca8415bfe374fa8a3a0467088eb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <CurrentBasicPopupQueueVariable>k__BackingField: {fileID: 11400000, guid: c409d1a8f0528f44fa06213a9c6b587c, type: 2}
   <PopupCollection>k__BackingField:
   - {fileID: 4573810320236389575}
-  <CurrentBasicPopupQueueVariable>k__BackingField: {fileID: 11400000, guid: c409d1a8f0528f44fa06213a9c6b587c, type: 2}
 --- !u!1001 &4636176438580820609
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -62,6 +62,10 @@ PrefabInstance:
     - target: {fileID: 2963258597080166361, guid: 8a1afa1a64ef360469a6e85cd7c4bf10, type: 3}
       propertyPath: m_Name
       value: PopupWithLinkController
+      objectReference: {fileID: 0}
+    - target: {fileID: 2963258597080166361, guid: 8a1afa1a64ef360469a6e85cd7c4bf10, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2963258597080166366, guid: 8a1afa1a64ef360469a6e85cd7c4bf10, type: 3}
       propertyPath: m_Pivot.x

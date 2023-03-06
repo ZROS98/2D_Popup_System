@@ -19,9 +19,18 @@ namespace PopupSystem
         [field: SerializeField]
         private BasicPopupQueueVariable CurrentBasicPopupQueueVariable { get; set; }
 
+        public void HandlePopup ()
+        {
+            CurrentBasicPopupQueueVariable.CurrentValue.Dequeue().gameObject.SetActiveOptimized(false);
+
+            if (IsThereNextPopupInQueue())
+            {
+                ShowNextPopup();
+            }
+        }
+        
         protected virtual void Awake ()
         {
-            AddListenerToButton();
         }
 
         protected void SetTextReferences (TMP_Text tmpText, string targetText, int maxTextLength)
@@ -32,21 +41,6 @@ namespace PopupSystem
         private string GetProperTextLength (string targetText, int maxTextLenght)
         {
             return targetText.Length > maxTextLenght ? targetText.Substring(0, maxTextLenght) : targetText;
-        }
-        
-        private void AddListenerToButton ()
-        {
-            CurrentButton.onClick.AddListener(HandlePopup);
-        }
-
-        private void HandlePopup ()
-        {
-            CurrentBasicPopupQueueVariable.CurrentValue.Dequeue().gameObject.SetActiveOptimized(false);
-
-            if (IsThereNextPopupInQueue())
-            {
-                ShowNextPopup();
-            }
         }
 
         private bool IsThereNextPopupInQueue ()

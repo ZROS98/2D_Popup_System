@@ -29,25 +29,8 @@ namespace PopupSystem
                 IsToggleOnCollection.Clear();
             }
         }
-
-        protected override void Awake ()
-        {
-            base.Awake();
-            SetReferences();
-            AddListenerToButton();
-        }
-
-        private void SetReferences ()
-        {
-            SetTextReferences(TitleText, CurrentPopupSetupWithMultipleOptions.Title, CurrentPopupSetupWithMultipleOptions.MaxTitleLength);
-        }
         
-        private void AddListenerToButton ()
-        {
-            CurrentButton.onClick.AddListener(ClosePopup);
-        }
-
-        private void ClosePopup ()
+        public void ClosePopup ()
         {
             if (IsPopupReadyToClose)
             {
@@ -60,6 +43,17 @@ namespace PopupSystem
                 IsPopupReadyToClose = false;
                 CurrentButton.interactable = false;
             }
+        }
+
+        protected override void Awake ()
+        {
+            base.Awake();
+            SetReferences();
+        }
+
+        private void SetReferences ()
+        {
+            SetTextReferences(TitleText, CurrentPopupSetupWithMultipleOptions.Title, CurrentPopupSetupWithMultipleOptions.MaxTitleLength);
         }
     }
 }

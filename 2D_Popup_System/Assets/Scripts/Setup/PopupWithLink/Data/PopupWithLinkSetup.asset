@@ -14,8 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Title>k__BackingField: Information
   <Message>k__BackingField: This is popup with link to repository of this project
-  <ButtonLabel>k__BackingField: Close
+  <ButtonLabel>k__BackingField: Open repo
   <ButtonImageAddress>k__BackingField: yellowButton.png
   <BackgroundImageAddress>k__BackingField: yellowBackground.png
   <LinkAddress>k__BackingField: https://github.com/ZROS98/2D_Popup_System
-  <OpenLinkLabelButton>k__BackingField: Open repo

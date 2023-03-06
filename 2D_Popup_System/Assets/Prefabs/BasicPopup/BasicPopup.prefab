@@ -255,9 +255,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PopupSystem.PopupSystemController, Assembly-CSharp
-        m_MethodName: ShowNextPopup
+      - m_Target: {fileID: 2963258597080166365}
+        m_TargetAssemblyTypeName: PopupSystem.BasicPopupController, Assembly-CSharp
+        m_MethodName: HandlePopup
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
