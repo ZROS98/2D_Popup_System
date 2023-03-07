@@ -11,7 +11,7 @@ namespace PopupSystem.ImageHandling
         [field: SerializeField]
         private PopupSetupWithMultipleOptions CurrentPopupSetupWithMultipleOptions { get; set; }
         [field: SerializeField]
-        private List<Image> CurrentImageCollection { get; set; } = new List<Image>();
+        private List<Image> ImageCollection { get; set; } = new List<Image>();
 
         private List<SpriteCreator> SpriteCreatorCollection { get; set; } = new List<SpriteCreator>();
 
@@ -38,7 +38,7 @@ namespace PopupSystem.ImageHandling
                 yield return new WaitUntil(() => CheckIfSpriteLoaded(SpriteCreatorCollection[i]));
                 
                 Sprite sprite = SpriteCreatorCollection[i].CreatedSprite;
-                CurrentImageCollection[i].sprite = sprite;
+                ImageCollection[i].sprite = sprite;
             }
         }
     }

@@ -50,9 +50,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94dfca8415bfe374fa8a3a0467088eb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <CurrentBasicPopupQueueVariable>k__BackingField: {fileID: 11400000, guid: c409d1a8f0528f44fa06213a9c6b587c, type: 2}
   <PopupCollection>k__BackingField:
   - {fileID: 5165469918850089568}
-  <CurrentBasicPopupQueueVariable>k__BackingField: {fileID: 11400000, guid: c409d1a8f0528f44fa06213a9c6b587c, type: 2}
 --- !u!114 &1480865587300737161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,7 +66,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <CurrentPopupSetupWithMultipleOptions>k__BackingField: {fileID: 11400000, guid: cc6ce8e7c80d9ac42a2ca7ba168e2fd8, type: 2}
-  <CurrentImageCollection>k__BackingField:
+  <ImageCollection>k__BackingField:
   - {fileID: 5165469918868914153}
   - {fileID: 5165469917481337580}
   - {fileID: 5165469917990171675}
