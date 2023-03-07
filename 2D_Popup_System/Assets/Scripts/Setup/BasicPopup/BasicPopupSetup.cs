@@ -7,7 +7,7 @@ namespace PopupSystem.Data
     {
         [field: SerializeField, Header(ProjectConstants.HEADER_MAX_TEXT_LENGTH + "12")]
         public string Title { get; set; }
-        [field: SerializeField, Header(ProjectConstants.HEADER_MAX_TEXT_LENGTH + "75")]
+        [field: SerializeField, Header(ProjectConstants.HEADER_MAX_TEXT_LENGTH + "120")]
         public string Message { get; private set; }
         [field: SerializeField, Header(ProjectConstants.HEADER_MAX_TEXT_LENGTH + "12")]
         public string ButtonLabel { get; private set; }
@@ -17,7 +17,7 @@ namespace PopupSystem.Data
         public string BackgroundImageAddress { get; private set; }
 
         public int MaxTitleLength { get; private set; } = 12;
-        public int MaxMessageLength { get; private set; } = 75;
+        public int MaxMessageLength { get; private set; } = 120;
         public int MaxButtonLabelLength { get; private set; } = 12;
 
         private const string ASSET_NAME = nameof(BasicPopupSetup);

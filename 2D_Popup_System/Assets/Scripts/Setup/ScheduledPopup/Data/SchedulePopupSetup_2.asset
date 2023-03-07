@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: SchedulePopupSetup_2
   m_EditorClassIdentifier: 
   <Title>k__BackingField: Second
-  <Message>k__BackingField: Schedule
-  <ButtonLabel>k__BackingField: Next
+  <Message>k__BackingField: This popup was scheduled (30 seconds)
+  <ButtonLabel>k__BackingField: Confirm
   <ButtonImageAddress>k__BackingField: yellowButton.png
   <BackgroundImageAddress>k__BackingField: yellowBackground.png
   <TimeToShowPopup>k__BackingField: 30
