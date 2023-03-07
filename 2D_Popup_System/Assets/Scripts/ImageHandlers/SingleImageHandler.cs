@@ -15,7 +15,7 @@ namespace PopupSystem.ImageHandling
 
         public bool CheckIfSpriteLoaded ()
         {
-            return CurrentSpriteCreator.CreatedSprite != null;
+            return CheckIfSpriteLoaded(CurrentSpriteCreator);
         }
         
         protected virtual void Awake ()
