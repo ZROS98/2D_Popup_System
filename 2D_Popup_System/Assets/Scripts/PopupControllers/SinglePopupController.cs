@@ -1,4 +1,3 @@
-using PopupSystem.Data;
 using TMPro;
 using UnityEngine;
 
@@ -8,11 +7,11 @@ namespace PopupSystem
     {
         
         [field: SerializeField]
-        private TMP_Text CurrentTitleText { get; set; }
+        private TMP_Text TitleText { get; set; }
         [field: SerializeField]
-        private TMP_Text CurrentMessageText { get; set; }
+        private TMP_Text MessageText { get; set; }
         [field: SerializeField]
-        private TMP_Text CurrentButtonLabelText { get; set; }
+        private TMP_Text ButtonLabelText { get; set; }
 
         protected override void Awake ()
         {
@@ -22,9 +21,9 @@ namespace PopupSystem
 
         private void SetReferences ()
         {
-            SetTextReferences(CurrentTitleText, CurrentBasicPopupSetup.Title, CurrentBasicPopupSetup.MaxTitleLength);
-            SetTextReferences(CurrentMessageText, CurrentBasicPopupSetup.Message, CurrentBasicPopupSetup.MaxMessageLength);
-            SetTextReferences(CurrentButtonLabelText, CurrentBasicPopupSetup.ButtonLabel, CurrentBasicPopupSetup.MaxButtonLabelLength);
+            SetTextReferences(TitleText, CurrentBasicPopupSetup.Title, CurrentBasicPopupSetup.MaxTitleLength);
+            SetTextReferences(MessageText, CurrentBasicPopupSetup.Message, CurrentBasicPopupSetup.MaxMessageLength);
+            SetTextReferences(ButtonLabelText, CurrentBasicPopupSetup.ButtonLabel, CurrentBasicPopupSetup.MaxButtonLabelLength);
         }
     }
 }
