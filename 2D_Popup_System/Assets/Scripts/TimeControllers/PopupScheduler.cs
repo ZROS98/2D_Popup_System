@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 namespace PopupSystem
@@ -7,10 +8,12 @@ namespace PopupSystem
     {
         [field: SerializeField]
         private List<ScheduledPopupController> CurrentPopupCollection { get; set; }
+        [field: SerializeField]
+        private TMP_Text TimerText { get; set; }
 
         private List<PopupTimer> TimerCollection { get; set; } = new List<PopupTimer>();
-        
-        public void SchedulePopups()
+
+        public void SchedulePopups ()
         {
             for (int i = 0; i < CurrentPopupCollection.Count; i++)
             {
@@ -19,13 +22,19 @@ namespace PopupSystem
                 timer.StartTimer();
                 TimerCollection.Add(timer);
             }
-            
+
+            ShowPopupTimer();
             AttachEvents();
         }
 
         protected virtual void OnDisable ()
         {
             DetachEvents();
+        }
+
+        private void ShowPopupTimer ()
+        {
+            TimerText.gameObject.SetActiveOptimized(true);
         }
 
         private void HandleTimerFinish (int timeToShowPopup)
@@ -44,11 +53,17 @@ namespace PopupSystem
             }
         }
 
+        private void UpdateTimerText (float passedTime)
+        {
+            TimerText.text = $"{ProjectConstants.TIMER_INFORMATION}{passedTime.ToString()}";
+        }
+
         private void AttachEvents ()
         {
             foreach (PopupTimer popupTimer in TimerCollection)
             {
                 popupTimer.OnTimerFinish += HandleTimerFinish;
+                popupTimer.OnTimerTick += UpdateTimerText;
             }
         }
 
@@ -57,6 +72,7 @@ namespace PopupSystem
             foreach (PopupTimer popupTimer in TimerCollection)
             {
                 popupTimer.OnTimerFinish -= HandleTimerFinish;
+                popupTimer.OnTimerTick -= UpdateTimerText;
             }
         }
     }

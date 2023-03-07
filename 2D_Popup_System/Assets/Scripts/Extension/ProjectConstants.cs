@@ -10,5 +10,7 @@ namespace PopupSystem
         public const string HEADER_MAX_TEXT_LENGTH = "Max text length: ";
 
         public const string GOOGLE_DRIVE_DOWNLOAD_LINK = "https://raw.githubusercontent.com/ZROS98/ImagesForPopupSystem/main/Images/";
+
+        public const string TIMER_INFORMATION = "First scheduled popup will be shown in 20 seconds, second in 30 seconds, third in 40 seconds. Timer: ";
     }
 }
