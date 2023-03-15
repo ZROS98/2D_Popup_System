@@ -7,7 +7,7 @@ namespace PopupSystem.Data
     public class PopupSetupWithMultipleOptions : BasicPopupSetup
     {
         [field: SerializeField]
-        public List<string> ButtonImageAddress { get; private set; }
+        public List<string> ButtonImageAddressCollection { get; private set; }
 
         private const string ASSET_NAME = nameof(PopupSetupWithMultipleOptions);
     }

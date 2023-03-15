@@ -22,9 +22,9 @@ namespace PopupSystem.ImageHandling
 
         private void SetAllImageReferences ()
         {
-            for (int i = 0; i < CurrentPopupSetupWithMultipleOptions.ButtonImageAddress.Count; i++)
+            for (int i = 0; i < CurrentPopupSetupWithMultipleOptions.ButtonImageAddressCollection.Count; i++)
             {
-                SetImageReference(CurrentPopupSetupWithMultipleOptions.ButtonImageAddress[i], out SpriteCreator spriteCreator);
+                SetImageReference(CurrentPopupSetupWithMultipleOptions.ButtonImageAddressCollection[i], out SpriteCreator spriteCreator);
                 SpriteCreatorCollection.Add(spriteCreator);
             }
 

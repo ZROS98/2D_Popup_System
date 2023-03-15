@@ -17,7 +17,7 @@ MonoBehaviour:
   <ButtonLabel>k__BackingField: Confirm
   <ButtonImageAddress>k__BackingField: yellowButton.png
   <BackgroundImageAddress>k__BackingField: chest.png
-  <ButtonImageAddress>k__BackingField:
+  <ButtonImageAddressCollection>k__BackingField:
   - diamond.png
   - dollar.png
   - experience.png
